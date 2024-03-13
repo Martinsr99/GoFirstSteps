@@ -26,7 +26,7 @@ func main() {
 // 		return numero * secuencia
 // 	}
 // }
-
+ 
 type Categoria struct {
 	Id     int
 	Nombre string
