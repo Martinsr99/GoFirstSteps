@@ -12,9 +12,29 @@ func main() {
 	// }
 
 	// Estructura anidada
-	categoria := Categoria{Id: 1, Nombre: "Categoria 1", Slug: "categoria-1"}
-	producto := Producto{Id: 1, Nombre: "Mesa de ordenador", Slug:"mesa-de-ordenador",Precio:1234,CategoriaId: categoria}
-	fmt.Printf("%+v \n",producto)
+	// categoria := Categoria{Id: 1, Nombre: "Categoria 1", Slug: "categoria-1"}
+	// producto := Producto{Id: 1, Nombre: "Mesa de ordenador", Slug:"mesa-de-ordenador",Precio:1234,CategoriaId: categoria}
+	// fmt.Printf("%+v \n",producto)
+
+	// Interfaces
+	e := Estructura{}
+	fmt.Println(e.miFuncion())
+	fmt.Println(e.Calculo(2,2))
+
+}
+
+type EjemploInterface interface {
+	miFuncion() string
+	Calculo(n1 int, n2 int) int
+}
+
+type Estructura struct{}
+
+func (*Estructura) miFuncion() string {
+	return "Texto desde mi funcion"
+}
+func (*Estructura) Calculo(n1 int, n2 int) int {
+	return n1+n2
 }
 
 // Clousure
@@ -27,15 +47,15 @@ func main() {
 // 	}
 // }
  
-type Categoria struct {
-	Id     int
-	Nombre string
-	Slug   string
-}
-type Producto struct {
-	Id          int
-	Nombre      string
-	Slug        string
-	Precio      int
-	CategoriaId Categoria
-}
+// type Categoria struct {
+// 	Id     int
+// 	Nombre string
+// 	Slug   string
+// }
+// type Producto struct {
+// 	Id          int
+// 	Nombre      string
+// 	Slug        string
+// 	Precio      int
+// 	CategoriaId Categoria
+// }
