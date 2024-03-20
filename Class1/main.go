@@ -20,16 +20,14 @@ func main() {
 	e := Estructura{}
 	fmt.Println(e.miFuncion())
 	fmt.Println(e.Calculo(2,2))
-
 }
 
+// Interfaces
 type EjemploInterface interface {
 	miFuncion() string
 	Calculo(n1 int, n2 int) int
 }
-
 type Estructura struct{}
-
 func (*Estructura) miFuncion() string {
 	return "Texto desde mi funcion"
 }
