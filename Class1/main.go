@@ -7,7 +7,7 @@ func main() {
 	//Clousure
 
 	// Tabla := tabla(2)
-	// for i:= 1; i<= 10; i++ {
+	// for i:= 1; i<= 10; i++ { 
 	// 	fmt.Printf("2 x %v = %v \n",i,Tabla())
 	// }
 
