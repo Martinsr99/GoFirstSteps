@@ -22,5 +22,20 @@ func Listar() {
 		clientes = append(clientes,dato)
 	}
 	fmt.Println(clientes)
-	
+}
+
+func ListarPorId(id int) {
+	conectar.Conectar()
+	sql := "select id,nombre,correo,telefono from clientes where id=?;"
+	datos, err := conectar.Db.Query(sql,id)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	defer conectar.CerrarConexion()
+	for datos.Next() {
+		var dato modelos.Cliente
+		datos.Scan(&dato.Id,&dato.Nombre,&dato.Correo,&dato.Telefono)
+		fmt.Println(dato)
+	}
 }
